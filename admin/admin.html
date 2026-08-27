@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - GARA DLOUIS</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="admin-logo">GARA<span>DLOUIS</span></div>
+            <ul class="sidebar-menu">
+                <li class="active" data-page="dashboard">📊 Dashboard</li>
+                <li data-page="products">📦 Produk</li>
+                <li data-page="orders">🛒 Pesanan</li>
+                <li data-page="customers">👥 Pelanggan</li>
+                <li data-page="settings">⚙️ Pengaturan</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="admin-profile">
+                    <span>Admin</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Page -->
+            <section id="dashboard" class="page active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Produk</h3>
+                        <p class="stat-value">24</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pesanan Hari Ini</h3>
+                        <p class="stat-value">15</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pendapatan</h3>
+                        <p class="stat-value">Rp 2.500.000</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pelanggan</h3>
+                        <p class="stat-value">120</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Page -->
+            <section id="products" class="page">
+                <div class="page-header">
+                    <h2>Kelola Produk</h2>
+                    <button class="btn-add">+ Tambah Produk</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list">
+                        <tr>
+                            <td>1</td>
+                            <td>Mobile Legends - 86 Diamonds</td>
+                            <td>Rp 20.000</td>
+                            <td>999</td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Free Fire - 140 Diamonds</td>
+                            <td>Rp 18.000</td>
+                            <td>999</td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Orders Page -->
+            <section id="orders" class="page">
+                <div class="page-header">
+                    <h2>Daftar Pesanan</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Pelanggan</th>
+                            <th>Produk</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>Budi</td>
+                            <td>Mobile Legends</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td><button class="btn-process">Proses</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Customers Page -->
+            <section id="customers" class="page">
+                <h2>Data Pelanggan</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Total Pembelian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Budi</td>
+                            <td>budi@gmail.com</td>
+                            <td>Rp 200.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Settings Page -->
+            <section id="settings" class="page">
+                <h2>Pengaturan</h2>
+                <form class="settings-form">
+                    <label>Nama Website</label>
+                    <input type="text" value="Garaa Dlouis">
+                    
+                    <label>Nomor WhatsApp</label>
+                    <input type="text" value="6282122997137">
+                    
+                    <label>Email Support</label>
+                    <input type="text" value="support@GARA-DLOUIS">
+                    
+                    <button type="submit" class="btn-save">Simpan</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Tambah Produk -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <h3>Tambah Produk</h3>
+            <input type="text" placeholder="Nama Produk">
+            <input type="text" placeholder="Harga">
+            <input type="number" placeholder="Stok">
+            <button class="btn-save">Simpan</button>
+            <button class="btn-cancel">Batal</button>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
